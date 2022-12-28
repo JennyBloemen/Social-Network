@@ -91,5 +91,32 @@ const thoughtController = {
   },
 
   //post to create a reaction stored in single thoughts reaction array field
+  addReaction(req, res) {
+    Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
+      { $addToSet: { reactions: body } },
+      { runValidators: true, new: true }
+    )
+      .then(({ dbThoughtData }) => {
+        if (!dbThoughtData) {
+          return res
+            .status(404)
+            .json({ message: "No thought found with this id." });
+        }
+        res.json(dbThoughtData);
+      })
+      .catch((err) => {
+        res.status(400).json(err);
+      });
+  },
   //delete to pull ane remove a reactions by it's id
+  removeReaction(req, res) {
+    Thought.findOneAndUpdate(
+      { _id: req.params.thoughtId },
+      { $pull: { reactions: { reactionId: params.reactionId } } },
+      { runValidators: true, new: true }
+    )
+      .then((dbUserData) => res.json(dbUserData))
+      .catch((err) => res.json(err));
+  },
 };
