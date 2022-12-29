@@ -1,10 +1,10 @@
-const { Schema, model, SchemaTypes } = require("mongoose");
+const { Schema, Types } = require("mongoose");
 
 const reactionSchema = new Schema(
   {
-    reactionID: {
-      type: schema.types.objectID,
-      default: () => new Types.objectID(),
+    reactionId: {
+      type: Schema.Types.ObjectId,
+      default: () => new Types.ObjectId(),
     },
     reactionBody: {
       type: String,
@@ -17,7 +17,8 @@ const reactionSchema = new Schema(
     },
     createAt: {
       type: Date,
-      default: Date.now, //find formating code
+      transform: getCreatedAtDate,
+      default: Date.now,
     },
   },
   {
@@ -27,5 +28,9 @@ const reactionSchema = new Schema(
     id: false,
   }
 );
-
+function getCreatedAtDate() {
+  return `${new Date(this.createdAt).getMonth() + 1}/${new Date(
+    this.createdAt
+  ).getDate()}/${new Date(this.createdAt).getFullYear()}`;
+}
 module.exports = reactionSchema;
