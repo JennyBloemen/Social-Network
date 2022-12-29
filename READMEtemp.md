@@ -1,39 +1,45 @@
-**_<p style="text-align: center;">Text with basic formatting applied</p>_**
-
-# Project Title
+# Social Network
 
 ## ✏️ Description
 
+This application is an api for social meda. It isa simple service to allow users to post thoughts, reactions and interact with friends.
+
 ## 📍 Project Requirements
 
--
--
+```md
+AS A social media startup
+I WANT an API for my social network that uses a NoSQL database
+SO THAT my website can handle large amounts of unstructured data
+```
 
 ## 👉 Acceptance Criteria
 
-- GIVEN WHEN
+```md
+GIVEN a social network API
+WHEN I enter the command to invoke the application
+THEN my server is started and the Mongoose models are synced to the MongoDB database
+WHEN I open API GET routes in Insomnia for users and thoughts
+THEN the data for each of these routes is displayed in a formatted JSON
+WHEN I test API POST, PUT, and DELETE routes in Insomnia
+THEN I am able to successfully create, update, and delete users and thoughts in my database
+WHEN I test API POST and DELETE routes in Insomnia
+THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
+```
 
 ## 🔗 Links to Page</h3>
 
-Deployed:
+```md
+GitHub Repo: https://github.com/JennyBloemen/Social-Network.git
+```
 
-GitHub Repo:
+## ▶️ Demo Video of Application</h3>
 
-## ▶️ Screenshot or Video of Application</h3>
+```md
+Google Docs:
+```
 
-![A test image](image.png)
+## 🛠 Built By</h3>
 
-<img src="./assets/images/MuSearchDemo.gif"width="640" height="360"/>
-
-<img src="./assets/images/Screen-Capture-1 copy.jpg">
-<img src="./assets/images/Screen-Capture-2 copy.jpg">
-
-## 🛠 Sources</h3>
-
-- Rapid API - Genius and Spotify
-- Background Photo by <a href="https://unsplash.com/@shapelined?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Shapelined</a> on <a href="https://unsplash.com/wallpapers/colors/grey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-- Google Fonts
-- Foundation Framework
-- Figma
-- YouTube
-- Post Scribe JS Library
+```md
+- Collaborated with Emmalee Anderson
+```
